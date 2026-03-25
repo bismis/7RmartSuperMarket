@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="grouping">
+	<parameter name="username" value="admin"></parameter>
+	<parameter name="password" value="admin"></parameter>
+	<parameter name="Browser" value="Chrome"></parameter>
+	<test name="Grouping" thread-count="5">
+		<groups>
+			<run>
+				<include name="smoketest"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testscript.LoginPageTest"></class>
+		</classes>
+	</test>
+</suite>
