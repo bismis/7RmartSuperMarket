@@ -10,42 +10,40 @@ import utilities.WaitUtility;
 public class LoginPage {
 
 	WebDriver driver;
-	
+
 	WaitUtility waitUtility = new WaitUtility();
-	
-	public LoginPage(WebDriver driver)
-	{
+
+	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this); //local to global assigning of driver
+		PageFactory.initElements(driver, this); // local to global assigning of driver
 	}
-	
-	@FindBy(xpath = "//input[@placeholder='Username']")WebElement usernamefield;
-	@FindBy(xpath = "//input[@placeholder='Password']")WebElement passwordfield;
-	@FindBy(xpath = "//button[text()='Sign In']")WebElement signin;
-	
-	//Locating DashBoard for assertion
-	@FindBy(xpath = "//p[text()='Dashboard']")WebElement dashboard;
-	
-	public LoginPage enterUsernameAndPassword(String username,String password)
-	{
+
+	@FindBy(xpath = "//input[@placeholder='Username']")
+	WebElement usernamefield;
+	@FindBy(xpath = "//input[@placeholder='Password']")
+	WebElement passwordfield;
+	@FindBy(xpath = "//button[text()='Sign In']")
+	WebElement signin;
+
+	// Locating DashBoard for assertion
+	@FindBy(xpath = "//p[text()='Dashboard']")
+	WebElement dashboard;
+
+	public LoginPage enterUsernameAndPassword(String username, String password) {
 		usernamefield.sendKeys(username);
 		passwordfield.sendKeys(password);
-		return this; // to create connection with current method.
+		return this;
 	}
-	
-	public HomePage clickButton()
-	{
-		//signin.click();
-		
-		waitUtility.waitElementToBeClicked(driver, signin);           //applied WaitUtility
+
+	public HomePage clickButton() {
+		// signin.click();
+
+		waitUtility.waitElementToBeClicked(driver, signin);
 		signin.click();
-		return new HomePage(driver);     //here can't give return this,coz when button click it is going to a new page.
+		return new HomePage(driver);
 	}
-	
-	public boolean isDashboardDisplayed()
-	{      
-		
-		return dashboard.isDisplayed();      //boolean return type always starts with isDisplayed return type.
-		
+
+	public boolean isDashboardDisplayed() {
+		return dashboard.isDisplayed();
 	}
 }

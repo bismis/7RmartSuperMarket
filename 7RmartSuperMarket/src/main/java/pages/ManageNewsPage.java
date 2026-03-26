@@ -6,50 +6,41 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ManageNewsPage {
-	
+
 	WebDriver driver;
-	
-	public ManageNewsPage(WebDriver driver)
-	{
+
+	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath = "//a[contains(@href,'admin/list-news')]")WebElement manageNewsInfo;
-	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")WebElement newButton;
-	@FindBy(id = "news")WebElement enterNewsField;
-	@FindBy(name = "create")WebElement save;
-	
-	@FindBy(xpath="//div[contains(@class,'alert-success')]")
+
+	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
+	WebElement newButton;
+	@FindBy(id = "news")
+	WebElement enterNewsField;
+	@FindBy(name = "create")
+	WebElement save;
+
+	@FindBy(xpath = "//div[contains(@class,'alert-success')]")
 	WebElement newNewsAddedAlert;
-	
-	public ManageNewsPage clickManageNewsInfo()
-	{
-		manageNewsInfo.click();
-		return this;
-	}
-	
-	public ManageNewsPage clickOnNewButton()
-	{
+
+	public ManageNewsPage clickOnNewButton() {
 		newButton.click();
 		return this;
 	}
-	
-	public ManageNewsPage enterNews()
-	{
+
+	public ManageNewsPage enterNews() {
 		enterNewsField.sendKeys("Exclusive!");
 		return this;
 	}
-	
-	public ManageNewsPage clickSave()
-	{
+
+	public ManageNewsPage clickSave() {
 		save.click();
 		return this;
-		
+
 	}
 
-	public boolean isNewNewsAddedAlert()
-	{
-	    return newNewsAddedAlert.isDisplayed();
+	public boolean isNewNewsAddedAlert() {
+		return newNewsAddedAlert.isDisplayed();
 	}
 }

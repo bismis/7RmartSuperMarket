@@ -37,7 +37,7 @@ public class Base {
 			properties.load(fis);
 		} catch (FileNotFoundException exception) {
 			exception.printStackTrace();
-		}                                                               
+		}
 		if (browser.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("edge")) {
@@ -47,7 +47,7 @@ public class Base {
 		} else {
 			throw new Exception("Invalid browser");
 		}
-		//driver = new ChromeDriver();
+		// driver = new ChromeDriver();
 		driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();
 

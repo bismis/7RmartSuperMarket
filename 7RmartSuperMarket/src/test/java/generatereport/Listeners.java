@@ -30,7 +30,7 @@ public class Listeners implements ITestListener{
 	}
 	
 	
-	public void onTestFailure(ITestResult result) { //called when test method passes
+	public void onTestFailure(ITestResult result) { //called when test method fails
 		ITestListener.super.onTestFailure(result);
 		extentTest.get().log(Status.FAIL, "Test Passed");
 		extentTest.get().fail(result.getThrowable());
