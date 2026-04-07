@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.constant;
+
 public class ManageNewsPage {
 
 	WebDriver driver;
@@ -30,7 +32,7 @@ public class ManageNewsPage {
 	}
 
 	public ManageNewsPage enterNews() {
-		enterNewsField.sendKeys("Exclusive!");
+		enterNewsField.sendKeys(constant.NEWS);
 		return this;
 	}
 

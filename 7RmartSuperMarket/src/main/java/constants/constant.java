@@ -10,5 +10,6 @@ public class constant {
 	public static final String ADMINALERT = "Admin already exist!";
 	public static final String CATEGALERT = "Category not added";
 	public static final String NEWSALERT = "News not Added!";
+	public static final String NEWS = "Exclusive!";
 
 }

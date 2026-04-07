@@ -24,8 +24,7 @@ public class LoginPageTest extends Base {
 		home = loginpage.clickButton();
 
 		boolean dashboardIsDisplayed = loginpage.isDashboardDisplayed();
-		Assert.assertTrue(dashboardIsDisplayed, constant.ERRORMSGFORLOGIN);// 1st arg for true condition & 2nd for login
-																			// error.
+		Assert.assertTrue(dashboardIsDisplayed, constant.ERRORMSGFORLOGIN);
 	}
 
 	@Test(groups = "smoketest")

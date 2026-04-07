@@ -37,7 +37,6 @@ public class WaitUtility {
 		
 	}
 	
-	//implicit wait is applying on Base class
-	//explicit wait is applying on Page class
+	
 
 }
